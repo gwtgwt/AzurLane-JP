@@ -18,6 +18,9 @@ jobs:
 
       - name: Build Perseus APK
         run: ./patch_perseus.sh
+        
+- name: Install Build Tools
+  run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "build-tools;32.0.0"
 
       - name: Zipalign and Sign Android release
         run: ./zipalign_sign.sh
